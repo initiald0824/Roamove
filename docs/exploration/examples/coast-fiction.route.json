@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "proposal-0.1",
+  "routeId": "coast-fiction",
+  "contentVersion": "proposal-0.1",
+  "sharedContentVersion": "proposal-0.1",
+  "executionReady": false,
+  "name": {"zh-Hans": "虚构海岸结构样例", "en": "Fictional coast structure sample"},
+  "geography": {"kind": "fictional-test-only", "verification": "not-applicable", "notice": "仅检验另一种节点数量和分支，不代表第二张上线地图。"},
+  "requiredCapabilities": ["route.graph", "journey.workout_link", "event.choice", "event.descend", "localization.inline"],
+  "resourceIds": [],
+  "startNodeId": "harbor",
+  "nodes": [
+    {"id": "harbor", "kind": "demo-entry", "name": {"zh-Hans": "虚构港口", "en": "Fictional harbor"}},
+    {"id": "lookout", "kind": "station", "name": {"zh-Hans": "虚构观景台", "en": "Fictional lookout"}},
+    {"id": "rest-stop", "kind": "station", "name": {"zh-Hans": "虚构休息点", "en": "Fictional rest stop"}},
+    {"id": "lighthouse", "kind": "station", "name": {"zh-Hans": "虚构灯塔", "en": "Fictional lighthouse"}},
+    {"id": "ending", "kind": "ending", "name": {"zh-Hans": "本次结束", "en": "Finish for today"}}
+  ],
+  "initialInventory": {"water": 2},
+  "equipmentIds": [],
+  "journeys": [
+    {"id": "to-lookout", "from": "harbor", "to": "lookout", "kind": "workout-linked", "trainingTemplateIds": ["standing-comfort", "standing-conditioning"], "eventIds": []},
+    {"id": "to-rest-stop", "from": "harbor", "to": "rest-stop", "kind": "workout-linked", "trainingTemplateIds": ["standing-comfort", "standing-no-hand-support"], "eventIds": []},
+    {"id": "lookout-to-lighthouse", "from": "lookout", "to": "lighthouse", "kind": "workout-linked", "trainingTemplateIds": ["standing-comfort"], "eventIds": ["view-choice"]},
+    {"id": "rest-to-lighthouse", "from": "rest-stop", "to": "lighthouse", "kind": "workout-linked", "trainingTemplateIds": ["standing-comfort"], "eventIds": []},
+    {"id": "revisit-rest", "from": "lighthouse", "to": "rest-stop", "kind": "workout-linked", "trainingTemplateIds": ["standing-comfort"], "eventIds": []},
+    {"id": "finish-story", "from": "lighthouse", "to": "ending", "kind": "narrative", "trainingTemplateIds": [], "eventIds": []}
+  ],
+  "events": [
+    {"id": "view-choice", "type": "event.choice", "locationJourneyId": "lookout-to-lighthouse", "choices": [
+      {"id": "record", "label": {"zh-Hans": "记下一段见闻", "en": "Record a discovery"}, "requiresItems": {}, "itemDeltas": {}, "worldFlag": "discovery-recorded"},
+      {"id": "continue", "label": {"zh-Hans": "继续前进", "en": "Keep going"}, "requiresItems": {}, "itemDeltas": {}, "worldFlag": "continued"}
+    ]}
+  ]
+}

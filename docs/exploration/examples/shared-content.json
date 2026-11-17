@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "proposal-0.1",
+  "contentVersion": "proposal-0.1",
+  "executionReady": false,
+  "notice": "静态设计数据，未实现 App 引擎，所有课程仍待专业审阅与实测。",
+  "capabilities": ["route.graph", "journey.workout_link", "event.choice", "event.camp", "event.descend", "media.image", "localization.inline"],
+  "trainingTemplates": [
+    {"id": "standing-comfort", "version": "proposal-0.1", "status": "research-only", "movementCandidates": ["A01", "A03", "S03"], "planningDurationSeconds": 1200},
+    {"id": "standing-conditioning", "version": "proposal-0.1", "status": "research-only", "movementCandidates": ["A01", "A02", "A03", "S03"], "planningDurationSeconds": 1200},
+    {"id": "standing-no-hand-support", "version": "proposal-0.1", "status": "research-only", "movementCandidates": ["A01", "A03", "S03"], "planningDurationSeconds": 1200, "notice": "仅用于明确相关条件后的课程研究，不从单个伤病名称自动选用。"}
+  ],
+  "items": [
+    {"id": "compressed-biscuit", "kind": "consumable", "name": {"zh-Hans": "压缩饼干", "en": "Compressed biscuit"}},
+    {"id": "chocolate", "kind": "consumable", "name": {"zh-Hans": "巧克力", "en": "Chocolate"}},
+    {"id": "instant-noodles", "kind": "consumable", "name": {"zh-Hans": "泡面", "en": "Instant noodles"}},
+    {"id": "water", "kind": "consumable", "name": {"zh-Hans": "饮用水", "en": "Water"}},
+    {"id": "tent", "kind": "equipment", "name": {"zh-Hans": "帐篷", "en": "Tent"}},
+    {"id": "sleeping-mat", "kind": "equipment", "name": {"zh-Hans": "防潮垫", "en": "Sleeping mat"}},
+    {"id": "sleeping-bag", "kind": "equipment", "name": {"zh-Hans": "睡袋", "en": "Sleeping bag"}},
+    {"id": "stove", "kind": "equipment", "name": {"zh-Hans": "炉具", "en": "Stove"}},
+    {"id": "headlamp", "kind": "equipment", "name": {"zh-Hans": "头灯", "en": "Headlamp"}}
+  ],
+  "resources": [
+    {"id": "aotai-concept-v1", "kind": "image", "path": "../../concepts/shuiwozi-first-person-concept-v1.png", "provenance": "generated-concept", "geographyVerified": false}
+  ]
+}

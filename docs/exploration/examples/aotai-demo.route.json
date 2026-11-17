@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "proposal-0.1",
+  "routeId": "aotai-demo",
+  "contentVersion": "proposal-0.1",
+  "sharedContentVersion": "proposal-0.1",
+  "executionReady": false,
+  "name": {"zh-Hans": "鳌太线结构样例", "en": "Aotai structure sample"},
+  "geography": {"kind": "real-route-with-demo-edges", "verification": "pending", "notice": "只验证内容结构，出发点和连线不是已核实的现实路线。"},
+  "requiredCapabilities": ["route.graph", "journey.workout_link", "event.choice", "event.camp", "event.descend", "media.image", "localization.inline"],
+  "resourceIds": ["aotai-concept-v1"],
+  "startNodeId": "demo-entry",
+  "nodes": [
+    {"id": "demo-entry", "kind": "demo-entry", "name": {"zh-Hans": "样例出发点（待核实）", "en": "Demo starting point (unverified)"}},
+    {"id": "shuiwozi", "kind": "station", "name": {"zh-Hans": "水窝子", "en": "Shuiwozi"}, "resourceId": "aotai-concept-v1"},
+    {"id": "return-ending", "kind": "ending", "name": {"zh-Hans": "本次旅程收尾", "en": "Journey ending"}}
+  ],
+  "initialInventory": {"compressed-biscuit": 3, "chocolate": 2, "instant-noodles": 1, "water": 4},
+  "equipmentIds": ["tent", "sleeping-mat", "sleeping-bag", "stove", "headlamp"],
+  "journeys": [
+    {
+      "id": "approach-shuiwozi", "from": "demo-entry", "to": "shuiwozi", "kind": "workout-linked",
+      "realConnectionVerified": false,
+      "trainingTemplateIds": ["standing-comfort", "standing-conditioning", "standing-no-hand-support"],
+      "onConfirmedStart": {"receiptKey": "approach-start", "itemDeltas": {"compressed-biscuit": -1, "water": -1}},
+      "eventIds": ["chocolate-break"]
+    },
+    {"id": "descend-story", "from": "shuiwozi", "to": "return-ending", "kind": "narrative", "trainingTemplateIds": [], "eventIds": []}
+  ],
+  "events": [
+    {
+      "id": "chocolate-break", "type": "event.choice", "locationJourneyId": "approach-shuiwozi",
+      "choices": [
+        {"id": "eat-one", "label": {"zh-Hans": "吃一块巧克力", "en": "Have one chocolate"}, "requiresItems": {"chocolate": 1}, "itemDeltas": {"chocolate": -1}, "worldFlag": "chocolate-used"},
+        {"id": "keep-it", "label": {"zh-Hans": "留到营地", "en": "Keep it for camp"}, "requiresItems": {}, "itemDeltas": {}, "worldFlag": "chocolate-kept"}
+      ]
+    },
+    {
+      "id": "camp-noodles", "type": "event.camp", "locationNodeId": "shuiwozi",
+      "choices": [
+        {"id": "cook", "label": {"zh-Hans": "煮面并留宿", "en": "Cook noodles and camp"}, "requiresItems": {"instant-noodles": 1, "water": 1}, "requiresEquipment": ["tent", "sleeping-mat", "sleeping-bag", "stove"], "itemDeltas": {"instant-noodles": -1, "water": -1}, "worldFlag": "next-morning"},
+        {"id": "save", "label": {"zh-Hans": "保存，下次再决定", "en": "Save and decide later"}, "requiresItems": {}, "itemDeltas": {}, "worldFlag": "camp-saved"}
+      ]
+    }
+  ]
+}

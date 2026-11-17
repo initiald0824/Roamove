@@ -1,6 +1,6 @@
 # Roamove
 
-> 当前分支包含冻结后的独立探索建议。[探索入口](docs/exploration/README.md)记录新增方案与证据口径；原讨论状态保存在标签 `product-freeze-2026-11-17`，提交 `1083fdbc45d30500ea1f97ae4cdca89ee69a609f`。
+> 当前分支包含冻结后的独立探索建议。先看[明早审阅入口](docs/exploration/REVIEW-2026-11-18.md)，完整材料见[探索目录](docs/exploration/README.md)；原讨论状态保存在标签 `product-freeze-2026-11-17`，提交 `1083fdbc45d30500ea1f97ae4cdca89ee69a609f`。
 
 Roamove 正处于产品定义与讨论阶段，探索以真实路线冒险组织训练、帮助用户持续运动的健身体验。
 
