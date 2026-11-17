@@ -1,5 +1,7 @@
 # Roamove
 
+> 当前分支包含冻结后的独立探索建议。[探索入口](docs/exploration/README.md)记录新增方案与证据口径；原讨论状态保存在标签 `product-freeze-2026-11-17`，提交 `1083fdbc45d30500ea1f97ae4cdca89ee69a609f`。
+
 Roamove 正处于产品定义与讨论阶段，探索以真实路线冒险组织训练、帮助用户持续运动的健身体验。
 
 设计稿：[用户适配与丰富动作库草案](docs/personalization-and-movement-library.md) · [动作库与训练编排草案](docs/movement-and-training-design.md) · [首版范围与用户流程草案](docs/first-release-user-flow.md) · [鳌太线站点与关卡目录草案](docs/aotai-level-outline.md) · [多分支互动冒险草案](docs/aotai-branching-adventure.md) · [水窝子约 20 分钟完整脚本](docs/aotai-shuiwozi-20-minute-walkthrough.md) · [水窝子营地分支样例](docs/aotai-shuiwozi-branch-example.md) · [背包与装备草案](docs/backpack-and-equipment.md) · [风景呈现与素材获取草案](docs/scenery-and-asset-sourcing.md) · [网络梗与彩蛋素材笔记](docs/aotai-memes.md)。
